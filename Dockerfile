@@ -1,4 +1,4 @@
-FROM bellsoft/liberica-openjdk-alpine:13
+FROM bellsoft/liberica-openjdk-alpine:latest
 
 LABEL maintainer="Thomas Lutz <lutz@symptoma.com>"
 
@@ -21,7 +21,7 @@ EXPOSE 1883 5672 8161 61613 61614 61616
 COPY entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
-USER 1001
+USER root
 WORKDIR $ACTIVEMQ_HOME
 
 ENTRYPOINT ["/entrypoint.sh"]
