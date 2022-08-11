@@ -9,8 +9,8 @@ RUN apk add --update curl && \
     mkdir -p /opt && \
     curl -s -S https://archive.apache.org/dist/activemq/$ACTIVEMQ_VERSION/$ACTIVEMQ-bin.tar.gz | tar -xvz -C /opt && \
     mv /opt/$ACTIVEMQ $ACTIVEMQ_HOME && \   
-    chown -R activemq:1000640000 $ACTIVEMQ_HOME && \
-    chown -h activemq:1000640000 $ACTIVEMQ_HOME
+    chown -R 1000640000:1000640000 $ACTIVEMQ_HOME && \
+    chown -h 1000640000:1000640000 $ACTIVEMQ_HOME
 
 EXPOSE 1883 5672 8161 61613 61614 61616
 
