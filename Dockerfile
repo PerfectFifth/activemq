@@ -4,6 +4,8 @@ ENV ACTIVEMQ_VERSION 5.17.1
 ENV ACTIVEMQ apache-activemq-$ACTIVEMQ_VERSION
 ENV ACTIVEMQ_HOME /opt/activemq
 
+USER root
+
 RUN apk add --update curl && \
     rm -rf /var/cache/apk/* && \
     mkdir -p /opt && \
